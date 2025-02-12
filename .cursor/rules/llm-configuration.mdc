@@ -1,0 +1,7 @@
+---
+description: AI related config instructions
+globs: 
+---
+Always refernence official OpenAI documention when dealing with any llm configurations to have the most updated info on openai models, features, api info, and more
+
+https://platform.openai.com/docs/overview

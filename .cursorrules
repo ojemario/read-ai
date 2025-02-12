@@ -1,0 +1,73 @@
+====================================================================
+General Guidelines
+====================================================================
+- You are an expert in developing Raycast extensions using TypeScript and React.
+- Provide clear, concise, and production-ready code without unnecessary apologies or thanks.
+- Preserve existing functionality and project structure as described in README.md and CHANGELOG.md.
+- Follow coding style rules as defined in .eslintrc.json and .prettierrc.
+- Implement changes in small, incremental steps with detailed commit messages.
+- Test all modifications in Raycast’s development mode ("ray develop") before committing.
+
+====================================================================
+Project Specific Guidelines
+====================================================================
+- Respect the separation between UI components (e.g. read-selected-text-script.tsx) and background tasks (e.g. read-selected-text-audio-only.ts).
+- Maintain clear responsibilities between processors (text-to-speech, image-to-text) and utility functions.
+- Ensure user preferences (e.g. API key, voice selection, reading style) are correctly handled via Raycast’s getPreferenceValues.
+- Update the README.md and CHANGELOG.md to document any feature additions or bug fixes.
+
+====================================================================
+Coding & Code Quality
+====================================================================
+- Write concise functions that do one thing well; ideally, no more than 50 executable lines per function.
+- Limit function parameter count to at most 4.
+- Use async/await for asynchronous flows and handle errors with Raycast Toast notifications.
+- Retain comments and documentation when refactoring code.
+- Keep commit diffs as small as possible to minimize disruption.
+- Follow naming conventions and coding standards set by the project’s ESLint and Prettier configurations.
+
+====================================================================
+Performance & Maintainability
+====================================================================
+- Optimize API usage by monitoring token consumption closely.
+- Maintain a clear division between UI logic and core processing tasks.
+- Validate and sanitize all inputs (e.g. selected text, image URLs) to prevent errors.
+- Regularly refactor and clean the code (following the Boy-Scout Rule) to reduce technical debt.
+
+====================================================================
+Raycast API Integration & Configuration
+====================================================================
+- Always use Raycast API methods such as getPreferenceValues, showToast, closeMainWindow, and openExtensionPreferences.
+- Register and configure all commands in package.json with clear titles, subtitles, and modes.
+- Update user documentation whenever integration details change.
+- For complete guidance on Raycast extension development, refer to the official Raycast Extension documentation:
+  https://developers.raycast.com/
+
+====================================================================
+OpenAI API Integration & Configuration
+====================================================================
+- Use the official OpenAI npm package (e.g. version 4.20.1) for all API interactions.
+- Securely retrieve your API key from Raycast preferences via getPreferenceValues and validate its existence.
+- For text generation, use models such as "gpt-4o-mini" or "gpt-4o" (adjust based on user preferences) and update these identifiers as new versions become available.
+- In image processing functions, replace outdated model identifiers (e.g. update "gpt-4-vision-preview" to "gpt-4-vision") following the current official guidelines.
+- For text-to-speech conversion, continue using the designated model (currently set to "tts-1") and verify periodically if updated endpoints or models are released.
+- Handle all API responses and errors gracefully using Raycast Toast notifications.
+- Refer to the latest OpenAI documentation for model updates and usage guidelines:
+  https://platform.openai.com/docs
+
+====================================================================
+Debugging & Testing
+====================================================================
+- Include in-code comments for complex logic and maintain JSDoc comments for clarity.
+- Use clear Toast notifications to indicate both progress and completion of tasks.
+- Write comprehensive unit tests for new processors and utilities to ensure stability.
+- Ensure any changes to background tasks or API calls are fully tested via Raycast extension commands.
+
+====================================================================
+Additional Rules
+====================================================================
+- Do not add placeholder or “TODO” comments in production code.
+- If requirements are unclear, request clarification rather than making assumptions.
+- Ensure all new code adheres to principles of modularity, clarity, and maintainability.
+- Keep commit diffs as minimal as possible and document changes with clear commit messages.
+- Regularly review and update both the coding guidelines and integration settings as the repository evolves.

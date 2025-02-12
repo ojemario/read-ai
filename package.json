@@ -8,8 +8,10 @@
     "Productivity"
   ],
   "author": "JungHoonGhae",
+  "owner": "mario_ojemudia",
   "contributors": [
-    "zezhehh"
+    "zezhehh",
+    "mario_ojemudia"
   ],
   "license": "MIT",
   "commands": [
